@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 
@@ -14,6 +17,8 @@ public class Classes : MonoBehaviour
         public string CharName;
 
         public DamageScript damage;
+        public string Resistances;
+        public string Weaknesses;
 
     
 
@@ -32,6 +37,7 @@ public class Classes : MonoBehaviour
             HP = 45;
             DMG = 10;
             DamType = "Physical";
+            Resistances = "Physical";
         }
         if (script.RoleInt == 1)
         {
@@ -39,6 +45,7 @@ public class Classes : MonoBehaviour
             HP = 20;
             DMG = 25;
             DamType = "Energy";
+            Resistances = "Energy";
         }
         if (script.RoleInt == 2)
         {
@@ -46,6 +53,7 @@ public class Classes : MonoBehaviour
             HP = 35;
             DMG = 15;
             DamType = "Physical";
+            Resistances = "Psychic";
         } 
         damage.HealthSet();
         HasRun = true;
