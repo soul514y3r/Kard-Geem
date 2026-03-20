@@ -8,12 +8,18 @@ public class Classes : MonoBehaviour
         public float HP;
         public float DMG;
         public string DamType;
+        public bool HasRun;
 
         public StartGameScript script;
         public string CharName;
 
+        public DamageScript damage;
+
+    
+
     void Awake()
     {
+        HasRun = false;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -41,6 +47,8 @@ public class Classes : MonoBehaviour
             DMG = 15;
             DamType = "Physical";
         } 
+        damage.HealthSet();
+        HasRun = true;
     }
 
 }
