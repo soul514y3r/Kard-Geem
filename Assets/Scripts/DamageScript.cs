@@ -30,7 +30,7 @@ public class DamageScript : MonoBehaviour
 
     void GetResistance(string DamType)
     {
-        if (classes.Resistances == DamType){Resistance = 0.5f;}
+        if (classes.Resistances.Contains(DamType) == true){Resistance = 0.5f;}
 
     }
 }
