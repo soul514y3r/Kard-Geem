@@ -1,16 +1,34 @@
+using System;
+using TMPro;
+using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartGameScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public NameChoiceScript script;
+    public GameObject Role;
+    public Classes classes;
+    public int RoleInt;
+    public string Name;
+        
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void startGame()
     {
-        
+        RoleInt = Role.GetComponent<TMP_Dropdown>().value;
+
+        Name = script.Name;
+        Debug.Log("Your Name is: "+ Name);
+        Debug.Log("Your Class is: "+ RoleInt);
+        classes.SetClass();
+        SceneManager.LoadScene("Match", LoadSceneMode.Single);
     }
+
 }
