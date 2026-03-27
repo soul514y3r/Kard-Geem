@@ -2201,6 +2201,8 @@ MonoBehaviour:
   script: {fileID: 725717692}
   CharName: 
   damage: {fileID: 1059571121}
+  Resistances: []
+  Weaknesses: []
 --- !u!114 &1059571120
 MonoBehaviour:
   m_ObjectHideFlags: 0
