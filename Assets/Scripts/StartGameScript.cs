@@ -14,12 +14,7 @@ public class StartGameScript : MonoBehaviour
     public int RoleInt;
     public string Name;
         
-    
-    void Start()
-    {
-        
-    }
-
+    //Ser till att du får din klass och startar sedan spelet.
     public void startGame()
     {
         RoleInt = Role.GetComponent<TMP_Dropdown>().value;

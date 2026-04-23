@@ -3,7 +3,8 @@ using UnityEngine;
 public class NameChoiceScript : MonoBehaviour
 {
     public string Name;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    //Namnet du skriver in blir sedan skickat till Classes skriptet
 public void ChooseName(string name)
     {
         Name = name;

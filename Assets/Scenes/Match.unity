@@ -433,9 +433,10 @@ GameObject:
   - component: {fileID: 510544691}
   - component: {fileID: 510544690}
   - component: {fileID: 510544692}
+  - component: {fileID: 510544693}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,10 +531,28 @@ MonoBehaviour:
   HP: 40
   DMG: 10
   DamType: Physical
+  Resistance:
+  - Physical
   Player: {fileID: 0}
   Hp: {fileID: 1988910437}
   Damage: {fileID: 2048797872}
   DamageType: {fileID: 1946190060}
+--- !u!114 &510544693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510544689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe7bc695e858d94084fab8387687b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageScript
+  TotalHealth: 40
+  classes: {fileID: 0}
+  enemyScript: {fileID: 510544692}
+  CurrHealth: 40
 --- !u!1 &1024334359
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,19 +18,25 @@ public class RandomCardScript : MonoBehaviour
     public GameObject CardDamage;
     public GameObject CardResisto;
     public GameObject Player;
+    public int DeckSize;
+    public int DeckMax;
     float randint;
-    RectTransform pos;
+    string Defeat;
+    PlayerUI UI;
     GameObject Card;
     
-    //int CurrCards;
-    //List<GameObject> CardAmount;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void Start()
+    // Skapar en random storlek på kortleken och skickar det till UIn. Läser in olika komponenter och object i skriptet.
+        void Awake()
     {
         Player = GameObject.Find("Player");
+        Defeat = "DefeatScreen";
+        UI = Player.GetComponent<PlayerUI>();
+        DeckMax = UnityEngine.Random.Range(10, 25);
+        UI.DeckCurr = DeckMax - DeckSize;
     }
 
+         //Skapar ett random kort och placerar det som ett barn till ett objekt.
     void randCard(GameObject self, Vector2 Pos)
     {
         randint = UnityEngine.Random.Range(1, 3); 
@@ -38,29 +44,20 @@ public class RandomCardScript : MonoBehaviour
         {
          Card = Instantiate(CardDamage, new Vector3(0,0, -1), quaternion.AxisAngle(0,0), self.transform);
          Card.GetComponent<RectTransform>().anchoredPosition = Pos;
+         DeckSize += 1;
         }
         if (randint == 2)
         {
          Card = Instantiate(CardResisto, new Vector3(0,0, -1), quaternion.AxisAngle(0,0), self.transform);
          Card.GetComponent<RectTransform>().anchoredPosition = Pos;
+         DeckSize += 1;
         }
     }
 
-    // Update is called once per frame
+        //Skapar ett kort ifall platsen är tom.
  public void Shuffle()
     {
-        //CardAmount.Add(CardPlacement5);
-        //CardAmount.Add(CardPlacement4);
-        //CardAmount.Add(CardPlacement3);
-        //CardAmount.Add(CardPlacement2);
-        //CardAmount.Add(CardPlacement1);
-        //try{CardAmount.AddRange(Card);}
-        //catch(NullReferenceException)
-        //{Debug.Log("No active Cards");}
-        
-        
-        
-        //CardAmount.RemoveRange(0, CurrCards);
+
         if (CardPlacement5.transform.childCount == 0)
          randCard(CardPlacement5, new Vector2(-100, -182));
         if (CardPlacement4.transform.childCount == 0)
@@ -71,5 +68,9 @@ public class RandomCardScript : MonoBehaviour
          randCard(CardPlacement2, new Vector2(-400, -182));
         if (CardPlacement1.transform.childCount == 0)
          randCard(CardPlacement1, new Vector2(-500, -182));
+        Debug.Log(DeckSize);
+        UI.DeckCurr = DeckMax - DeckSize;
+        if (DeckSize > DeckMax) 
+         SceneManager.LoadScene(Defeat, LoadSceneMode.Single);
     }
 }
