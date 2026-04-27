@@ -6,20 +6,26 @@ using UnityEngine;
 
 public class DamageScript : MonoBehaviour
 {
-    [SerializeField] float TotalHealth;
+    [SerializeField] int MaxHealth;
     public Classes classes;
     public EnemyScript enemyScript;
-    public float CurrHealth;
+    public int CurrHealth;
     
     float Resistance = 1;
 
+    void Awake()
+    {
+        if (gameObject == GameObject.Find("Enemy")) {MaxHealth = UnityEngine.Random.Range(20, MaxHealth); Debug.Log("Here");}
+        CurrHealth = MaxHealth;
+    }
 
-      //Checkar om objektet är en spelare eller fiende och tar den maximala HP för att sätta HP till det I början.
+
+    //Checkar om objektet är en spelare eller fiende och tar den maximala HP för att sätta HP till det I början.
     public void HealthSet()
     {
-        if (gameObject.tag =="Enemy") {TotalHealth = enemyScript.HP;}
-        else if (TotalHealth == 0) {TotalHealth = classes.HP;}
-        CurrHealth = TotalHealth;
+        if (gameObject == GameObject.Find("Player")) {MaxHealth = Convert.ToInt32(classes.HP);}
+        Debug.Log(MaxHealth);
+        CurrHealth = MaxHealth;
 
         
     }
@@ -28,7 +34,7 @@ public class DamageScript : MonoBehaviour
  public void TakeDamage(float Damage, string DameType)
     {
         GetResistance(DameType);
-        CurrHealth -= Damage * Resistance;
+        CurrHealth -= Convert.ToInt32(Damage * Resistance);
 
     }
 

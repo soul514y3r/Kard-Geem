@@ -285,6 +285,8 @@ MonoBehaviour:
   CardDamage: {fileID: 6405907872503687593, guid: 6773e5a6ef6e17b459af313c64610771, type: 3}
   CardResisto: {fileID: 6405907872503687593, guid: 2ad47a0bdd407b04a8141d8fd001624a, type: 3}
   Player: {fileID: 0}
+  DeckSize: 0
+  DeckMax: 0
 --- !u!1 &304082739
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,10 +551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe7bc695e858d94084fab8387687b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageScript
-  TotalHealth: 40
+  MaxHealth: 50
   classes: {fileID: 0}
   enemyScript: {fileID: 510544692}
-  CurrHealth: 40
+  CurrHealth: 0
 --- !u!1 &1024334359
 GameObject:
   m_ObjectHideFlags: 0
