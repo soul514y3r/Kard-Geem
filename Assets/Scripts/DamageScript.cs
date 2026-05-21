@@ -13,6 +13,7 @@ public class DamageScript : MonoBehaviour
     
     float Resistance = 1;
 
+          //Om hälsan ska läggas till på en fiende, ska den randomizas. Lägger sedan till MaxHP till din HP pool.
     void Awake()
     {
         if (gameObject == GameObject.Find("Enemy")) {MaxHealth = UnityEngine.Random.Range(20, MaxHealth); Debug.Log("Here");}

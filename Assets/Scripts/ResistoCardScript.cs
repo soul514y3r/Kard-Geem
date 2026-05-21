@@ -8,7 +8,7 @@ public class ResistoCardScript : MonoBehaviour
     public GameObject Enemy;
     public GameObject Player;
 
-    //Lägger till physical resistans om du inte redan hade det.
+    //Lägger till resistans om du inte redan hade det.
 public void ResistoCard()
     {
         Player = GameObject.Find("Player");

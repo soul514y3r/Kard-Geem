@@ -36,7 +36,7 @@ public class EnemyScript : MonoBehaviour
         if (DamageSelf.CurrHealth <= 0) {SceneManager.LoadScene(sceneName:"Winscreen", LoadSceneMode.Single);}
     }
 
-         //WIP skadar spelaren
+         //Skadar spelaren
     public void TakeTurn()
     {
         damage.TakeDamage(DMG, DamType);

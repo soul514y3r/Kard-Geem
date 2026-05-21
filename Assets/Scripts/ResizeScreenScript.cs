@@ -4,7 +4,7 @@ public class ResizeScreenScript : MonoBehaviour
 {
 
     public GameObject Object;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Ser till att bakgrunden är tillräckligt stor
     void Start()
     {
         Object.GetComponent<RectTransform>();

@@ -7,7 +7,6 @@ using UnityEngine.UIElements.Experimental;
 
 public class Classes : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
         public string Name;
         public float HP;
         public float DMG;

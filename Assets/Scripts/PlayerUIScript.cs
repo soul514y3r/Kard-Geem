@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class PlayerUI : MonoBehaviour
 
 
 
-    // Update is called once per frame
     //När Classes skriptet har kört, uppdaterar skriptet dina stats.
     void Update()
     {
@@ -28,6 +28,7 @@ public class PlayerUI : MonoBehaviour
         DamType.GetComponent<TMP_Text>().SetText("DamType: "+ classes.DamType);
         CharName.GetComponent<TMP_Text>().SetText(classes.CharName);
         DeckSize.GetComponent<TMP_Text>().SetText("DeckSize: "+ DeckCurr);
+        if (damage.CurrHealth == 0) {SceneManager.LoadScene("DefeatScreen", LoadSceneMode.Single);}
         }
     }
 
